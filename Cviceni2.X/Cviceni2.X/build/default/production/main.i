@@ -17054,37 +17054,42 @@ unsigned char __t3rd16on(void);
 # 39 "main.c" 2
 
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdbool.h" 1 3
+# 42 "main.c" 2
 
 
+_Bool run = 0;
 
 void main(void)
 {
     ANSELB = 0;
+    TRISB = 0;
 
-    TRISB = 0b00000000;
     ANSELC = 0;
     TRISC = 0xFF;
 
-    LATB = 0b00000001;
+
     int i[] = {0,1,2};
      while(1)
     {
 
+         if(PORTCbits.RC0 == 1){
+             run = 1;
+         }
+         if(PORTCbits.RC1 == 1){
+             run = 0;
 
-
-
-
-
-
-         LATB = 0;
+   } if(run){
+           LATB = 0;
            char j = 0;
            for(j = 0;j<3;j++){
                LATB |= (1<<i[j]);
                i[j] +=1;
                i[j] = i[j]%8;
-           }
-        _delay((unsigned long)((500)*(8000000/4000.0)));
 
-     }
+
+           }_delay((unsigned long)((80)*(8000000/4000.0)));
+   }
+   }
    return;
 }

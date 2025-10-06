@@ -17058,34 +17058,115 @@ unsigned char __t3rd16on(void);
 # 42 "main.c" 2
 
 
-void main(void)
+uint8_t i;
+
+char getKey(){
+    LATB = 0xFF;
+    char key = 'q';
+    short idx = 0;
+    _Bool pressed = 0;
+    char keys[4][4] = {
+        {'1', '4', '7', '*'},
+        {'2', '5', '8', '0'},
+        {'3', '6', '9', '#'},
+        {'A','B','C','D'}
+    };
+    short row = -1;
+    short col = -1;
+    while(idx<4){
+        if(PORTB & 1<<(idx+4)){
+            row = idx;
+            pressed = 1;
+            break;
+        }
+        idx++;
+    }
+
+    if(pressed){
+        idx = 0;
+        while(idx<4){
+            LATB |= 0x0F;
+            LATB = LATB & ~(1<<idx);
+            if(!(PORTB & (1<<row+4))){
+                col = idx;
+                break;
+            }
+            idx++;
+
+
+
+        }
+        return keys[col][row];
+    }
+    return key;
+}
+void showChar(char a){
+
+    switch(a){
+        case '0':
+            LATD = 0b00111111;
+            break;
+
+        case '1':
+            LATD = 0b00000110;
+            break;
+        case '2':
+            LATD = 0b01011011;
+            break;
+        case '3':
+            LATD = 0b01001111;
+            break;
+        case '4':
+            LATD = 0b01100110;
+            break;
+        case '5':
+            LATD = 0b01101101;
+            break;
+        case '6':
+            LATD = 0b01111101;
+            break;
+        case '7':
+            LATD = 0b00000111;
+            break;
+        case '8':
+            LATD = 0b01111111;
+            break;
+        case '9':
+            LATD = 0b01101111;
+            break;
+
+    }
+}
+
+void main()
 {
+    char key = 'q';
+    ANSELA = 0;
     ANSELB = 0;
-    TRISB = 0;
-
     ANSELC = 0;
-    TRISC = 0xFF;
-    _Bool run = 0;
-    int i[] = {0,1,2};
-     while(1)
+    ANSELD = 0;
+    TRISA = 0b00000000;
+    TRISB = 0b11110000;
+    TRISC = 0;
+    TRISD = 0;
+    LATA = 0xFF;
+    LATB = 0x0F;
+    LATC = 0b10000001;
+    LATD = 0;
+
+    while (1)
     {
+        i=0;
 
-         if(PORTCbits.RC0 == 1){
-             run = 1;
+        key = getKey();
+        if(key != 'q'){
+            showChar(key);
+        }
+        else{
+            LATC = 0;
+        }
+
+        _delay((unsigned long)((10)*(8000000/4000.0)));
          }
-         if(PORTCbits.RC1 == 1){
-             run = 0;
 
-   } if(run){
-           LATB = 0;
-           char j = 0;
-           for(j = 0;j<3;j++){
-               LATB |= (1<<i[j]);
-               i[j] +=1;
-               i[j] = i[j]%8;
-           }
-        _delay((unsigned long)((500)*(8000000/4000.0)));
-
-     }
-   return;
 }
