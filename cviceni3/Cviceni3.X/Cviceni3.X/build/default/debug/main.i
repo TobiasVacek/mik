@@ -17056,9 +17056,67 @@ unsigned char __t3rd16on(void);
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdbool.h" 1 3
 # 42 "main.c" 2
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/string.h" 1 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/string.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 421 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 26 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/string.h" 2 3
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
 
 
-uint8_t i;
+
+
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 43 "main.c" 2
+
+
+uint16_t i;
 
 char getKey(){
     LATB = 0xFF;
@@ -17100,47 +17158,58 @@ char getKey(){
     }
     return key;
 }
-void showChar(char a){
-
-    switch(a){
-        case '0':
+void showTime(short *time){
+    int num = 0;
+    for(int j = 0; j<4; j++){
+        num = time[j];
+        LATA = 1<<j;
+        switch(num){
+        case 0:
             LATD = 0b00111111;
             break;
 
-        case '1':
+        case 1:
             LATD = 0b00000110;
             break;
-        case '2':
+        case 2:
             LATD = 0b01011011;
             break;
-        case '3':
+        case 3:
             LATD = 0b01001111;
             break;
-        case '4':
+        case 4:
             LATD = 0b01100110;
             break;
-        case '5':
-            LATD = 0b00010000;
+        case 5:
+            LATD = 0b01101101;
             break;
-        case '6':
-            LATD = 0b00001000;
+        case 6:
+            LATD = 0b01111101;
             break;
-        case '7':
-            LATD = 0b00000100;
+        case 7:
+            LATD = 0b00000111;
             break;
-        case '8':
-            LATD = 0b00000010;
+        case 8:
+            LATD = 0b01111111;
             break;
-        case '9':
-            LATD = 0b00000001;
+        case 9:
+            LATD = 0b01101111;
             break;
 
+
+    }_delay((unsigned long)((1)*(8000000/4000.0)));
     }
-}
+
+    }
 
 void main()
 {
+    short i = 0;
+    short time = 0;
     char key = 'q';
+    char last_key = 'q';
+    short nums[] = {0,0,0,0};
+    short old_nums[] = {0,0,0,0};
     ANSELA = 0;
     ANSELB = 0;
     ANSELC = 0;
@@ -17156,17 +17225,14 @@ void main()
 
     while (1)
     {
-        i=0;
 
         key = getKey();
-        if(key != 'q'){
-            showChar(key);
+        if(key >= '0' && key <= '9' && last_key != key){
+            nums[i%4] = key -'0';
+            i++;
         }
-        else{
-            LATC = 0;
-        }
+        showTime(nums);
+        _delay((unsigned long)((1)*(8000000/4000.0)));
 
-        _delay((unsigned long)((10)*(8000000/4000.0)));
-         }
-
+}
 }

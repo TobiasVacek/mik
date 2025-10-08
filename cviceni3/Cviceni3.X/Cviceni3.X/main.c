@@ -39,9 +39,10 @@
 #include <stdint.h>
 #include <pic18f47k40.h>
 #include <stdbool.h>
+#include <math.h>
 #define _XTAL_FREQ 8000000
 
-uint8_t i;
+uint16_t i;
 
 char getKey(){
     LATB = 0xFF;
@@ -83,47 +84,57 @@ char getKey(){
     }
     return key;
 }
-void showChar(char a){
-    //LATC = 0xFF;
-    switch(a){
-        case '0':
+void showTime(short *time){
+    int num = 0;
+    for(int j = 0; j<4; j++){
+        num = time[j];
+        LATA = 1<<j;
+        switch(num){
+        case 0:
             LATD = 0b00111111;
             break;
             
-        case '1':
+        case 1:
             LATD = 0b00000110;
             break;
-        case '2':
+        case 2:
             LATD = 0b01011011;
             break;
-        case '3':
+        case 3:
             LATD = 0b01001111;
             break;
-        case '4':
+        case 4:
             LATD = 0b01100110;
             break;
-        case '5':
+        case 5:
             LATD = 0b01101101;
             break;
-        case '6':
+        case 6:
             LATD = 0b01111101;
             break;
-        case '7':
+        case 7:
             LATD = 0b00000111;
             break;
-        case '8':
+        case 8:
             LATD = 0b01111111;
             break;
-        case '9':
+        case 9:
             LATD = 0b01101111;
             break;
             
+            
+    }__delay_ms(1);
     }
-}
+           
+    }
 
 void main() 
 {
+    short i = 0;
+    short time = 0;
     char key = 'q';
+    char last_key = 'q';
+    short nums[] = {0,0,0,0};
     ANSELA = 0;
     ANSELB = 0;
     ANSELC = 0;
@@ -139,17 +150,20 @@ void main()
     
     while (1) 
     {
-        i=0;
         
         key = getKey();
-        if(key != 'q'){
-            showChar(key);
+        if(key >= '0' && key <= '9' && last_key != key){
+            for(i = 3; i>0; i--){
+                nums[i] = nums[i-1];
+            }
+            nums[0] = key -'0';
+            
+            i++;
+            
         }
-        else{
-            LATC = 0;
-        }
+        last_key = key;
+        showTime(&nums);
+        __delay_ms(1);
         
-        __delay_ms(10);
-         }
-        
+}
 }

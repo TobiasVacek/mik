@@ -5,11 +5,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17800
 [; ;C:/Users/tobik/.mchp_packs/Microchip/PIC18F-K_DFP/1.8.249/xc8\pic\include\proc/pic18f47k40.h: 17800: extern volatile unsigned char PORTB __attribute__((address(0xF8E)));
 [v _PORTB `Vuc ~T0 @X0 0 e@3982 ]
+"16621
+[; ;C:/Users/tobik/.mchp_packs/Microchip/PIC18F-K_DFP/1.8.249/xc8\pic\include\proc/pic18f47k40.h: 16621: extern volatile unsigned char LATA __attribute__((address(0xF83)));
+[v _LATA `Vuc ~T0 @X0 0 e@3971 ]
 "16957
 [; ;C:/Users/tobik/.mchp_packs/Microchip/PIC18F-K_DFP/1.8.249/xc8\pic\include\proc/pic18f47k40.h: 16957: extern volatile unsigned char LATD __attribute__((address(0xF86)));
 [v _LATD `Vuc ~T0 @X0 0 e@3974 ]
+[v F202 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Users/tobik/.mchp_packs/Microchip/PIC18F-K_DFP/1.8.249/xc8\pic\include/builtins.h
+[v __delay `JF202 ~T0 @X0 0 e ]
+[p i __delay ]
 [p mainexit ]
-"8762
+"8762 C:/Users/tobik/.mchp_packs/Microchip/PIC18F-K_DFP/1.8.249/xc8\pic\include\proc/pic18f47k40.h
 [; ;C:/Users/tobik/.mchp_packs/Microchip/PIC18F-K_DFP/1.8.249/xc8\pic\include\proc/pic18f47k40.h: 8762: extern volatile unsigned char ANSELA __attribute__((address(0xF11)));
 [v _ANSELA `Vuc ~T0 @X0 0 e@3857 ]
 "9258
@@ -33,16 +40,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17532
 [; ;C:/Users/tobik/.mchp_packs/Microchip/PIC18F-K_DFP/1.8.249/xc8\pic\include\proc/pic18f47k40.h: 17532: extern volatile unsigned char TRISD __attribute__((address(0xF8B)));
 [v _TRISD `Vuc ~T0 @X0 0 e@3979 ]
-"16621
-[; ;C:/Users/tobik/.mchp_packs/Microchip/PIC18F-K_DFP/1.8.249/xc8\pic\include\proc/pic18f47k40.h: 16621: extern volatile unsigned char LATA __attribute__((address(0xF83)));
-[v _LATA `Vuc ~T0 @X0 0 e@3971 ]
 "16845
 [; ;C:/Users/tobik/.mchp_packs/Microchip/PIC18F-K_DFP/1.8.249/xc8\pic\include\proc/pic18f47k40.h: 16845: extern volatile unsigned char LATC __attribute__((address(0xF85)));
 [v _LATC `Vuc ~T0 @X0 0 e@3973 ]
-[v F202 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Users/tobik/.mchp_packs/Microchip/PIC18F-K_DFP/1.8.249/xc8\pic\include/builtins.h
-[v __delay `JF202 ~T0 @X0 0 e ]
-[p i __delay ]
 "3 main.c
 [p x FEXTOSC  =  HS      ]
 "4
@@ -1469,37 +1469,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28432
 [; ;C:/Users/tobik/.mchp_packs/Microchip/PIC18F-K_DFP/1.8.249/xc8\pic\include\proc/pic18f47k40.h: 28432: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"44 main.c
-[; ;main.c: 44: uint8_t i;
-[v _i `uc ~T0 @X0 1 e ]
-"46
-[; ;main.c: 46: char getKey(){
+"45 main.c
+[; ;main.c: 45: uint16_t i;
+[v _i `us ~T0 @X0 1 e ]
+"47
+[; ;main.c: 47: char getKey(){
 [v _getKey `(uc ~T0 @X0 1 ef ]
 {
 [e :U _getKey ]
 [f ]
-"47
-[; ;main.c: 47:     LATB = 0xFF;
-[e = _LATB -> -> 255 `i `uc ]
 "48
-[; ;main.c: 48:     char key = 'q';
+[; ;main.c: 48:     LATB = 0xFF;
+[e = _LATB -> -> 255 `i `uc ]
+"49
+[; ;main.c: 49:     char key = 'q';
 [v _key `uc ~T0 @X0 1 a ]
 [e = _key -> -> 113 `ui `uc ]
-"49
-[; ;main.c: 49:     short idx = 0;
+"50
+[; ;main.c: 50:     short idx = 0;
 [v _idx `s ~T0 @X0 1 a ]
 [e = _idx -> -> 0 `i `s ]
-"50
-[; ;main.c: 50:     _Bool pressed = 0;
+"51
+[; ;main.c: 51:     _Bool pressed = 0;
 [v _pressed `a ~T0 @X0 1 a ]
 [e = _pressed -> -> 0 `i `a ]
-[v F10136 `uc ~T0 @X0 -> 4 `i t ]
-[v F10135 `F10136 ~T0 @X0 -> 4 `i s ]
-[i F10135
+[v F10303 `uc ~T0 @X0 -> 4 `i t ]
+[v F10302 `F10303 ~T0 @X0 -> 4 `i s ]
+[i F10302
 :U ..
 :U ..
-"51
-[; ;main.c: 51:     char keys[4][4] = {
+"52
+[; ;main.c: 52:     char keys[4][4] = {
 -> -> 49 `ui `uc
 -> -> 52 `ui `uc
 -> -> 55 `ui `uc
@@ -1525,324 +1525,381 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-[v F10138 `uc ~T0 @X0 -> 4 `i t ]
-[v _keys `F10138 ~T0 @X0 -> 4 `i a ]
-[e = _keys F10135 ]
-"57
-[; ;main.c: 57:     short row = -1;
+[v F10305 `uc ~T0 @X0 -> 4 `i t ]
+[v _keys `F10305 ~T0 @X0 -> 4 `i a ]
+[e = _keys F10302 ]
+"58
+[; ;main.c: 58:     short row = -1;
 [v _row `s ~T0 @X0 1 a ]
 [e = _row -> -U -> 1 `i `s ]
-"58
-[; ;main.c: 58:     short col = -1;
+"59
+[; ;main.c: 59:     short col = -1;
 [v _col `s ~T0 @X0 1 a ]
 [e = _col -> -U -> 1 `i `s ]
-"59
-[; ;main.c: 59:     while(idx<4){
-[e $U 1502  ]
-[e :U 1503 ]
-{
 "60
-[; ;main.c: 60:         if(PORTB & 1<<(idx+4)){
-[e $ ! != & -> _PORTB `i << -> 1 `i + -> _idx `i -> 4 `i -> 0 `i 1505  ]
+[; ;main.c: 60:     while(idx<4){
+[e $U 1503  ]
+[e :U 1504 ]
 {
 "61
-[; ;main.c: 61:             row = idx;
-[e = _row _idx ]
+[; ;main.c: 61:         if(PORTB & 1<<(idx+4)){
+[e $ ! != & -> _PORTB `i << -> 1 `i + -> _idx `i -> 4 `i -> 0 `i 1506  ]
+{
 "62
-[; ;main.c: 62:             pressed = 1;
-[e = _pressed -> -> 1 `i `a ]
+[; ;main.c: 62:             row = idx;
+[e = _row _idx ]
 "63
-[; ;main.c: 63:             break;
-[e $U 1504  ]
+[; ;main.c: 63:             pressed = 1;
+[e = _pressed -> -> 1 `i `a ]
 "64
-[; ;main.c: 64:         }
-}
-[e :U 1505 ]
+[; ;main.c: 64:             break;
+[e $U 1505  ]
 "65
-[; ;main.c: 65:         idx++;
-[e ++ _idx -> -> 1 `i `s ]
-"66
-[; ;main.c: 66:     }
-}
-[e :U 1502 ]
-"59
-[; ;main.c: 59:     while(idx<4){
-[e $ < -> _idx `i -> 4 `i 1503  ]
-[e :U 1504 ]
-"68
-[; ;main.c: 68:     if(pressed){
-[e $ ! != -> _pressed `i -> 0 `i 1506  ]
-{
-"69
-[; ;main.c: 69:         idx = 0;
-[e = _idx -> -> 0 `i `s ]
-"70
-[; ;main.c: 70:         while(idx<4){
-[e $U 1507  ]
-[e :U 1508 ]
-{
-"71
-[; ;main.c: 71:             LATB |= 0x0F;
-[e =| _LATB -> -> 15 `i `Vuc ]
-"72
-[; ;main.c: 72:             LATB = LATB & ~(1<<idx);
-[e = _LATB -> & -> _LATB `i ~ << -> 1 `i -> _idx `i `uc ]
-"73
-[; ;main.c: 73:             if(!(PORTB & (1<<row+4))){
-[e $ ! ! != & -> _PORTB `i << -> 1 `i + -> _row `i -> 4 `i -> 0 `i 1510  ]
-{
-"74
-[; ;main.c: 74:                 col = idx;
-[e = _col _idx ]
-"75
-[; ;main.c: 75:                 break;
-[e $U 1509  ]
-"76
-[; ;main.c: 76:             }
-}
-[e :U 1510 ]
-"77
-[; ;main.c: 77:             idx++;
-[e ++ _idx -> -> 1 `i `s ]
-"81
-[; ;main.c: 81:         }
-}
-[e :U 1507 ]
-"70
-[; ;main.c: 70:         while(idx<4){
-[e $ < -> _idx `i -> 4 `i 1508  ]
-[e :U 1509 ]
-"82
-[; ;main.c: 82:         return keys[col][row];
-[e ) *U + &U *U + &U _keys * -> -> _col `us `ux -> * -> # *U &U *U &U _keys `ui -> -> 4 `i `ui `ux * -> -> _row `us `ux -> -> # *U &U *U + &U _keys * -> -> _col `us `ux -> * -> # *U &U *U &U _keys `ui -> -> 4 `i `ui `ux `ui `ux ]
-[e $UE 1501  ]
-"83
-[; ;main.c: 83:     }
+[; ;main.c: 65:         }
 }
 [e :U 1506 ]
-"84
-[; ;main.c: 84:     return key;
-[e ) _key ]
-[e $UE 1501  ]
-"85
-[; ;main.c: 85: }
-[e :UE 1501 ]
+"66
+[; ;main.c: 66:         idx++;
+[e ++ _idx -> -> 1 `i `s ]
+"67
+[; ;main.c: 67:     }
 }
-"86
-[; ;main.c: 86: void showChar(char a){
-[v _showChar `(v ~T0 @X0 1 ef1`uc ]
+[e :U 1503 ]
+"60
+[; ;main.c: 60:     while(idx<4){
+[e $ < -> _idx `i -> 4 `i 1504  ]
+[e :U 1505 ]
+"69
+[; ;main.c: 69:     if(pressed){
+[e $ ! != -> _pressed `i -> 0 `i 1507  ]
 {
-[e :U _showChar ]
-[v _a `uc ~T0 @X0 1 r1 ]
+"70
+[; ;main.c: 70:         idx = 0;
+[e = _idx -> -> 0 `i `s ]
+"71
+[; ;main.c: 71:         while(idx<4){
+[e $U 1508  ]
+[e :U 1509 ]
+{
+"72
+[; ;main.c: 72:             LATB |= 0x0F;
+[e =| _LATB -> -> 15 `i `Vuc ]
+"73
+[; ;main.c: 73:             LATB = LATB & ~(1<<idx);
+[e = _LATB -> & -> _LATB `i ~ << -> 1 `i -> _idx `i `uc ]
+"74
+[; ;main.c: 74:             if(!(PORTB & (1<<row+4))){
+[e $ ! ! != & -> _PORTB `i << -> 1 `i + -> _row `i -> 4 `i -> 0 `i 1511  ]
+{
+"75
+[; ;main.c: 75:                 col = idx;
+[e = _col _idx ]
+"76
+[; ;main.c: 76:                 break;
+[e $U 1510  ]
+"77
+[; ;main.c: 77:             }
+}
+[e :U 1511 ]
+"78
+[; ;main.c: 78:             idx++;
+[e ++ _idx -> -> 1 `i `s ]
+"82
+[; ;main.c: 82:         }
+}
+[e :U 1508 ]
+"71
+[; ;main.c: 71:         while(idx<4){
+[e $ < -> _idx `i -> 4 `i 1509  ]
+[e :U 1510 ]
+"83
+[; ;main.c: 83:         return keys[col][row];
+[e ) *U + &U *U + &U _keys * -> -> _col `us `ux -> * -> # *U &U *U &U _keys `ui -> -> 4 `i `ui `ux * -> -> _row `us `ux -> -> # *U &U *U + &U _keys * -> -> _col `us `ux -> * -> # *U &U *U &U _keys `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e $UE 1502  ]
+"84
+[; ;main.c: 84:     }
+}
+[e :U 1507 ]
+"85
+[; ;main.c: 85:     return key;
+[e ) _key ]
+[e $UE 1502  ]
+"86
+[; ;main.c: 86: }
+[e :UE 1502 ]
+}
+"87
+[; ;main.c: 87: void showTime(short *time){
+[v _showTime `(v ~T0 @X0 1 ef1`*s ]
+{
+[e :U _showTime ]
+[v _time `*s ~T0 @X0 1 r1 ]
 [f ]
 "88
-[; ;main.c: 88:     switch(a){
-[e $U 1513  ]
-{
+[; ;main.c: 88:     int num = 0;
+[v _num `i ~T0 @X0 1 a ]
+[e = _num -> 0 `i ]
 "89
-[; ;main.c: 89:         case '0':
-[e :U 1514 ]
+[; ;main.c: 89:     for(int j = 0; j<4; j++){
+{
+[v _j `i ~T0 @X0 1 a ]
+[e = _j -> 0 `i ]
+[e $ < _j -> 4 `i 1513  ]
+[e $U 1514  ]
+[e :U 1513 ]
+{
 "90
-[; ;main.c: 90:             LATD = 0b00111111;
-[e = _LATD -> -> 63 `i `uc ]
+[; ;main.c: 90:         num = time[j];
+[e = _num -> *U + _time * -> _j `x -> -> # *U _time `i `x `i ]
 "91
-[; ;main.c: 91:             break;
-[e $U 1512  ]
+[; ;main.c: 91:         LATA = 1<<j;
+[e = _LATA -> << -> 1 `i _j `uc ]
+"92
+[; ;main.c: 92:         switch(num){
+[e $U 1517  ]
+{
 "93
-[; ;main.c: 93:         case '1':
-[e :U 1515 ]
+[; ;main.c: 93:         case 0:
+[e :U 1518 ]
 "94
-[; ;main.c: 94:             LATD = 0b00000110;
-[e = _LATD -> -> 6 `i `uc ]
+[; ;main.c: 94:             LATD = 0b00111111;
+[e = _LATD -> -> 63 `i `uc ]
 "95
 [; ;main.c: 95:             break;
-[e $U 1512  ]
-"96
-[; ;main.c: 96:         case '2':
-[e :U 1516 ]
+[e $U 1516  ]
 "97
-[; ;main.c: 97:             LATD = 0b01011011;
-[e = _LATD -> -> 91 `i `uc ]
-"98
-[; ;main.c: 98:             break;
-[e $U 1512  ]
-"99
-[; ;main.c: 99:         case '3':
-[e :U 1517 ]
-"100
-[; ;main.c: 100:             LATD = 0b01001111;
-[e = _LATD -> -> 79 `i `uc ]
-"101
-[; ;main.c: 101:             break;
-[e $U 1512  ]
-"102
-[; ;main.c: 102:         case '4':
-[e :U 1518 ]
-"103
-[; ;main.c: 103:             LATD = 0b01100110;
-[e = _LATD -> -> 102 `i `uc ]
-"104
-[; ;main.c: 104:             break;
-[e $U 1512  ]
-"105
-[; ;main.c: 105:         case '5':
+[; ;main.c: 97:         case 1:
 [e :U 1519 ]
-"106
-[; ;main.c: 106:             LATD = 0b00010000;
-[e = _LATD -> -> 16 `i `uc ]
-"107
-[; ;main.c: 107:             break;
-[e $U 1512  ]
-"108
-[; ;main.c: 108:         case '6':
+"98
+[; ;main.c: 98:             LATD = 0b00000110;
+[e = _LATD -> -> 6 `i `uc ]
+"99
+[; ;main.c: 99:             break;
+[e $U 1516  ]
+"100
+[; ;main.c: 100:         case 2:
 [e :U 1520 ]
-"109
-[; ;main.c: 109:             LATD = 0b00001000;
-[e = _LATD -> -> 8 `i `uc ]
-"110
-[; ;main.c: 110:             break;
-[e $U 1512  ]
-"111
-[; ;main.c: 111:         case '7':
+"101
+[; ;main.c: 101:             LATD = 0b01011011;
+[e = _LATD -> -> 91 `i `uc ]
+"102
+[; ;main.c: 102:             break;
+[e $U 1516  ]
+"103
+[; ;main.c: 103:         case 3:
 [e :U 1521 ]
-"112
-[; ;main.c: 112:             LATD = 0b00000100;
-[e = _LATD -> -> 4 `i `uc ]
-"113
-[; ;main.c: 113:             break;
-[e $U 1512  ]
-"114
-[; ;main.c: 114:         case '8':
+"104
+[; ;main.c: 104:             LATD = 0b01001111;
+[e = _LATD -> -> 79 `i `uc ]
+"105
+[; ;main.c: 105:             break;
+[e $U 1516  ]
+"106
+[; ;main.c: 106:         case 4:
 [e :U 1522 ]
-"115
-[; ;main.c: 115:             LATD = 0b00000010;
-[e = _LATD -> -> 2 `i `uc ]
-"116
-[; ;main.c: 116:             break;
-[e $U 1512  ]
-"117
-[; ;main.c: 117:         case '9':
+"107
+[; ;main.c: 107:             LATD = 0b01100110;
+[e = _LATD -> -> 102 `i `uc ]
+"108
+[; ;main.c: 108:             break;
+[e $U 1516  ]
+"109
+[; ;main.c: 109:         case 5:
 [e :U 1523 ]
+"110
+[; ;main.c: 110:             LATD = 0b01101101;
+[e = _LATD -> -> 109 `i `uc ]
+"111
+[; ;main.c: 111:             break;
+[e $U 1516  ]
+"112
+[; ;main.c: 112:         case 6:
+[e :U 1524 ]
+"113
+[; ;main.c: 113:             LATD = 0b01111101;
+[e = _LATD -> -> 125 `i `uc ]
+"114
+[; ;main.c: 114:             break;
+[e $U 1516  ]
+"115
+[; ;main.c: 115:         case 7:
+[e :U 1525 ]
+"116
+[; ;main.c: 116:             LATD = 0b00000111;
+[e = _LATD -> -> 7 `i `uc ]
+"117
+[; ;main.c: 117:             break;
+[e $U 1516  ]
 "118
-[; ;main.c: 118:             LATD = 0b00000001;
-[e = _LATD -> -> 1 `i `uc ]
+[; ;main.c: 118:         case 8:
+[e :U 1526 ]
 "119
-[; ;main.c: 119:             break;
-[e $U 1512  ]
+[; ;main.c: 119:             LATD = 0b01111111;
+[e = _LATD -> -> 127 `i `uc ]
+"120
+[; ;main.c: 120:             break;
+[e $U 1516  ]
 "121
-[; ;main.c: 121:     }
-}
-[e $U 1512  ]
-[e :U 1513 ]
-[e [\ _a , $ -> -> 48 `ui `i 1514
- , $ -> -> 49 `ui `i 1515
- , $ -> -> 50 `ui `i 1516
- , $ -> -> 51 `ui `i 1517
- , $ -> -> 52 `ui `i 1518
- , $ -> -> 53 `ui `i 1519
- , $ -> -> 54 `ui `i 1520
- , $ -> -> 55 `ui `i 1521
- , $ -> -> 56 `ui `i 1522
- , $ -> -> 57 `ui `i 1523
- 1512 ]
-[e :U 1512 ]
+[; ;main.c: 121:         case 9:
+[e :U 1527 ]
 "122
-[; ;main.c: 122: }
-[e :UE 1511 ]
+[; ;main.c: 122:             LATD = 0b01101111;
+[e = _LATD -> -> 111 `i `uc ]
+"123
+[; ;main.c: 123:             break;
+[e $U 1516  ]
+"126
+[; ;main.c: 126:     }_delay((unsigned long)((1)*(8000000/4000.0)));
+}
+[e $U 1516  ]
+[e :U 1517 ]
+[e [\ _num , $ -> 0 `i 1518
+ , $ -> 1 `i 1519
+ , $ -> 2 `i 1520
+ , $ -> 3 `i 1521
+ , $ -> 4 `i 1522
+ , $ -> 5 `i 1523
+ , $ -> 6 `i 1524
+ , $ -> 7 `i 1525
+ , $ -> 8 `i 1526
+ , $ -> 9 `i 1527
+ 1516 ]
+[e :U 1516 ]
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"127
+[; ;main.c: 127:     }
+}
+[e ++ _j -> 1 `i ]
+[e $ < _j -> 4 `i 1513  ]
+[e :U 1514 ]
+}
+"129
+[; ;main.c: 129:     }
+[e :UE 1512 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"124
-[; ;main.c: 124: void main()
+"131
+[; ;main.c: 131: void main()
 [v _main `(v ~T0 @X0 1 ef ]
-"125
-[; ;main.c: 125: {
+"132
+[; ;main.c: 132: {
 {
 [e :U _main ]
 [f ]
-"126
-[; ;main.c: 126:     char key = 'q';
+"133
+[; ;main.c: 133:     short i = 0;
+[v _i `s ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `s ]
+"134
+[; ;main.c: 134:     short time = 0;
+[v _time `s ~T0 @X0 1 a ]
+[e = _time -> -> 0 `i `s ]
+"135
+[; ;main.c: 135:     char key = 'q';
 [v _key `uc ~T0 @X0 1 a ]
 [e = _key -> -> 113 `ui `uc ]
-"127
-[; ;main.c: 127:     ANSELA = 0;
-[e = _ANSELA -> -> 0 `i `uc ]
-"128
-[; ;main.c: 128:     ANSELB = 0;
-[e = _ANSELB -> -> 0 `i `uc ]
-"129
-[; ;main.c: 129:     ANSELC = 0;
-[e = _ANSELC -> -> 0 `i `uc ]
-"130
-[; ;main.c: 130:     ANSELD = 0;
-[e = _ANSELD -> -> 0 `i `uc ]
-"131
-[; ;main.c: 131:     TRISA = 0b00000000;
-[e = _TRISA -> -> 0 `i `uc ]
-"132
-[; ;main.c: 132:     TRISB = 0b11110000;
-[e = _TRISB -> -> 240 `i `uc ]
-"133
-[; ;main.c: 133:     TRISC = 0;
-[e = _TRISC -> -> 0 `i `uc ]
-"134
-[; ;main.c: 134:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
-"135
-[; ;main.c: 135:     LATA = 0xFF;
-[e = _LATA -> -> 255 `i `uc ]
 "136
-[; ;main.c: 136:     LATB = 0x0F;
-[e = _LATB -> -> 15 `i `uc ]
+[; ;main.c: 136:     char last_key = 'q';
+[v _last_key `uc ~T0 @X0 1 a ]
+[e = _last_key -> -> 113 `ui `uc ]
+[v F10318 `s ~T0 @X0 -> 4 `i s ]
+[i F10318
+:U ..
 "137
-[; ;main.c: 137:     LATC = 0b10000001;
-[e = _LATC -> -> 129 `i `uc ]
+[; ;main.c: 137:     short nums[] = {0,0,0,0};
+-> -> 0 `i `s
+-> -> 0 `i `s
+-> -> 0 `i `s
+-> -> 0 `i `s
+..
+]
+[v _nums `s ~T0 @X0 -> 4 `i a ]
+[e = _nums F10318 ]
+[v F10320 `s ~T0 @X0 -> 4 `i s ]
+[i F10320
+:U ..
 "138
-[; ;main.c: 138:     LATD = 0;
-[e = _LATD -> -> 0 `i `uc ]
+[; ;main.c: 138:     short old_nums[] = {0,0,0,0};
+-> -> 0 `i `s
+-> -> 0 `i `s
+-> -> 0 `i `s
+-> -> 0 `i `s
+..
+]
+[v _old_nums `s ~T0 @X0 -> 4 `i a ]
+[e = _old_nums F10320 ]
+"139
+[; ;main.c: 139:     ANSELA = 0;
+[e = _ANSELA -> -> 0 `i `uc ]
 "140
-[; ;main.c: 140:     while (1)
-[e :U 1526 ]
+[; ;main.c: 140:     ANSELB = 0;
+[e = _ANSELB -> -> 0 `i `uc ]
 "141
-[; ;main.c: 141:     {
-{
+[; ;main.c: 141:     ANSELC = 0;
+[e = _ANSELC -> -> 0 `i `uc ]
 "142
-[; ;main.c: 142:         i=0;
-[e = _i -> -> 0 `i `uc ]
+[; ;main.c: 142:     ANSELD = 0;
+[e = _ANSELD -> -> 0 `i `uc ]
+"143
+[; ;main.c: 143:     TRISA = 0b00000000;
+[e = _TRISA -> -> 0 `i `uc ]
 "144
-[; ;main.c: 144:         key = getKey();
-[e = _key ( _getKey ..  ]
+[; ;main.c: 144:     TRISB = 0b11110000;
+[e = _TRISB -> -> 240 `i `uc ]
 "145
-[; ;main.c: 145:         if(key != 'q'){
-[e $ ! != -> _key `ui -> 113 `ui 1528  ]
-{
+[; ;main.c: 145:     TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
 "146
-[; ;main.c: 146:             showChar(key);
-[e ( _showChar (1 _key ]
+[; ;main.c: 146:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
 "147
-[; ;main.c: 147:         }
-}
-[e $U 1529  ]
+[; ;main.c: 147:     LATA = 0xFF;
+[e = _LATA -> -> 255 `i `uc ]
 "148
-[; ;main.c: 148:         else{
-[e :U 1528 ]
-{
+[; ;main.c: 148:     LATB = 0x0F;
+[e = _LATB -> -> 15 `i `uc ]
 "149
-[; ;main.c: 149:             LATC = 0;
-[e = _LATC -> -> 0 `i `uc ]
+[; ;main.c: 149:     LATC = 0b10000001;
+[e = _LATC -> -> 129 `i `uc ]
 "150
-[; ;main.c: 150:         }
+[; ;main.c: 150:     LATD = 0;
+[e = _LATD -> -> 0 `i `uc ]
+"152
+[; ;main.c: 152:     while (1)
+[e :U 1530 ]
+"153
+[; ;main.c: 153:     {
+{
+"155
+[; ;main.c: 155:         key = getKey();
+[e = _key ( _getKey ..  ]
+"156
+[; ;main.c: 156:         if(key >= '0' && key <= '9' && last_key != key){
+[e $ ! && && >= -> _key `ui -> 48 `ui <= -> _key `ui -> 57 `ui != -> _last_key `i -> _key `i 1532  ]
+{
+"157
+[; ;main.c: 157:             nums[i%4] = key -'0';
+[e = *U + &U _nums * -> -> % -> _i `i -> 4 `i `ui `ux -> -> # *U &U _nums `ui `ux -> - -> _key `ui -> 48 `ui `s ]
+"158
+[; ;main.c: 158:             i++;
+[e ++ _i -> -> 1 `i `s ]
+"159
+[; ;main.c: 159:         }
+}
+[e :U 1532 ]
+"160
+[; ;main.c: 160:         showTime(nums);
+[e ( _showTime (1 &U _nums ]
+"161
+[; ;main.c: 161:         _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"163
+[; ;main.c: 163: }
 }
 [e :U 1529 ]
-"152
-[; ;main.c: 152:         _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"153
-[; ;main.c: 153:          }
-}
-[e :U 1525 ]
-[e $U 1526  ]
-[e :U 1527 ]
-"155
-[; ;main.c: 155: }
-[e :UE 1524 ]
+[e $U 1530  ]
+[e :U 1531 ]
+"164
+[; ;main.c: 164: }
+[e :UE 1528 ]
 }

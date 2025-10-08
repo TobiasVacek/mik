@@ -63,11 +63,11 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"46 C:\projects\cvut\mik\cviceni3\Cviceni3.X\Cviceni3.X\main.c
+"47 C:\projects\cvut\mik\cviceni3\Cviceni3.X\Cviceni3.X\main.c
 [v _getKey getKey `(uc  1 e 1 0 ]
-"86
-[v _showChar showChar `(v  1 e 1 0 ]
-"124
+"87
+[v _showTime showTime `(v  1 e 1 0 ]
+"131
 [v _main main `(v  1 e 1 0 ]
 "8762 C:/Users/tobik/.mchp_packs/Microchip/PIC18F-K_DFP/1.8.249/xc8\pic\include\proc/pic18f47k40.h
 [v _ANSELA ANSELA `VEuc  1 e 1 @3857 ]
@@ -95,39 +95,48 @@
 [v _TRISD TRISD `VEuc  1 e 1 @3979 ]
 "17800
 [v _PORTB PORTB `VEuc  1 e 1 @3982 ]
-"44 C:\projects\cvut\mik\cviceni3\Cviceni3.X\Cviceni3.X\main.c
-[v _i i `uc  1 e 1 0 ]
-"124
+"131 C:\projects\cvut\mik\cviceni3\Cviceni3.X\Cviceni3.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"126
-[v main@key key `uc  1 a 1 27 ]
-"155
+"137
+[v main@nums nums `[4]s  1 a 8 36 ]
+"138
+[v main@old_nums old_nums `[4]s  1 a 8 28 ]
+"133
+[v main@i i `s  1 a 2 44 ]
+"135
+[v main@key key `uc  1 a 1 47 ]
+"136
+[v main@last_key last_key `uc  1 a 1 46 ]
+"164
 } 0
-"86
-[v _showChar showChar `(v  1 e 1 0 ]
+"87
+[v _showTime showTime `(v  1 e 1 0 ]
 {
-[v showChar@a a `uc  1 p 1 wreg ]
-[v showChar@a a `uc  1 p 1 wreg ]
-[v showChar@a a `uc  1 p 1 0 ]
-"122
-} 1
-"46
+"89
+[v showTime@j j `i  1 a 2 5 ]
+"88
+[v showTime@num num `i  1 a 2 3 ]
+"87
+[v showTime@time time `*.30s  1 p 1 0 ]
+"129
+} 0
+"47
 [v _getKey getKey `(uc  1 e 1 0 ]
 {
-"51
+"52
 [v getKey@keys keys `[4][4]uc  1 a 16 2 ]
-"49
+"50
 [v getKey@idx idx `s  1 a 2 24 ]
-"57
-[v getKey@row row `s  1 a 2 22 ]
 "58
+[v getKey@row row `s  1 a 2 22 ]
+"59
 [v getKey@col col `s  1 a 2 18 ]
-"50
+"51
 [v getKey@pressed pressed `a  1 a 1 21 ]
-"48
+"49
 [v getKey@key key `uc  1 a 1 20 ]
-"50
-[v getKey@F10135 F10135 `[4][4]uc  1 s 16 F10135 ]
-"85
+"51
+[v getKey@F10302 F10302 `[4][4]uc  1 s 16 F10302 ]
+"86
 } 0
