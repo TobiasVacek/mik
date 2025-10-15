@@ -1,0 +1,121 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F47K40 ]
+[d frameptr 4065 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\atdiv.c
+[v ___atdiv __atdiv `(m  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\atmod.c
+[v ___atmod __atmod `(m  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lodiv.c
+[v ___lodiv __lodiv `(uo  1 e 8 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lomod.c
+[v ___lomod __lomod `(uo  1 e 8 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ltdiv.c
+[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ltmod.c
+[v ___ltmod __ltmod `(um  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul24.c
+[v ___tmul __tmul `(um  1 e 3 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"44 C:\projects\cvut\mik\Cviceni4.X\Cviceni4.X\main.c
+[v _TIMER0 TIMER0 `IIH(v  1 e 1 0 ]
+"66
+[v _main main `(v  1 e 1 0 ]
+"9254 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f47k40.h
+[v _ANSELB ANSELB `VEuc  1 e 1 @3865 ]
+"10060
+[v _ANSELD ANSELD `VEuc  1 e 1 @3878 ]
+"16960
+[v _LATD LATD `VEuc  1 e 1 @3974 ]
+"17291
+[v _TRISB TRISB `VEuc  1 e 1 @3977 ]
+"17535
+[v _TRISD TRISD `VEuc  1 e 1 @3979 ]
+"27083
+[v _T0CON0 T0CON0 `VEuc  1 e 1 @4053 ]
+"27148
+[v _T0CON1 T0CON1 `VEuc  1 e 1 @4054 ]
+"30341
+[v _GIE GIE `VEb  1 e 0 @32663 ]
+"30347
+[v _GIEL GIEL `VEb  1 e 0 @32662 ]
+"30605
+[v _INT0IE INT0IE `VEb  1 e 0 @30224 ]
+"30608
+[v _INT0IF INT0IF `VEb  1 e 0 @30288 ]
+"30611
+[v _INT0IP INT0IP `VEb  1 e 0 @30160 ]
+"30629
+[v _INT1IE INT1IE `VEb  1 e 0 @30225 ]
+"30632
+[v _INT1IF INT1IF `VEb  1 e 0 @30289 ]
+"30635
+[v _INT1IP INT1IP `VEb  1 e 0 @30161 ]
+"30653
+[v _INT2IE INT2IE `VEb  1 e 0 @30226 ]
+"30656
+[v _INT2IF INT2IF `VEb  1 e 0 @30290 ]
+"30659
+[v _INT2IP INT2IP `VEb  1 e 0 @30162 ]
+"30911
+[v _IOCIE IOCIE `VEb  1 e 0 @30228 ]
+"33914
+[v _TMR0IE TMR0IE `VEb  1 e 0 @30229 ]
+"33917
+[v _TMR0IF TMR0IF `VEb  1 e 0 @30293 ]
+"66 C:\projects\cvut\mik\Cviceni4.X\Cviceni4.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"97
+} 0
+"44
+[v _TIMER0 TIMER0 `IIH(v  1 e 1 0 ]
+{
+"64
+} 0
