@@ -8,7 +8,6 @@
 # 2 "<built-in>" 2
 # 1 "main.c" 2
 
-
 #pragma config FEXTOSC = HS
 #pragma config RSTOSC = EXTOSC
 
@@ -17049,59 +17048,63 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 39 "main.c" 2
+# 38 "main.c" 2
+
+
+# 1 "./lcd_PIC18F47K40.h" 1
 
 
 
 
 
-void __attribute__((picinterrupt(("")))) INTERRUPTS(void)
-{
-    if (TMR0IF)
-    {
-        LATD=~LATD;
-        TMR0IF=0;
-    }
-    if(INT0IF){
-        LATD = 0;
-        INT0IF = 0;
-    }
-    if(INT1IF){
-        LATD = 0xF0;
-        INT1IF = 0;
-    }
-    if(INT2IF){
-        LATD = 0b10101010;
-        INT2IF = 0;
-    }
-    return;
-}
+
+void Send_Command (char cmd);
+void Send_Data (char dat);
+# 41 "main.c" 2
+
+
+
+
+
 
 void main(void)
 {
-    ANSELD = 0;
-    ANSELB = 0;
-
-    TRISB = 0xFF;
-    TRISD = 0x00;
-    LATD = 0xF0;
+    ANSELB = 0b00000000;
+    TRISB = 0b00000000;
+    LATB = 0b00000000;
 
 
-    T0CON1 = 0b01000001;
-    T0CON0 = 0b10011111;
+    Send_Command (0b00000011);
+    Send_Command (0b00000011);
+    Send_Command (0b00000011);
+    Send_Command (0b00000010);
+    Send_Command (0b00101000);
+    Send_Command (0b00001000);
+    Send_Command (0b00000001);
+    Send_Command (0b00000110);
 
-    TMR0IF = 0;
-    TMR0IE = 1;
-    GIE = 1;
-    GIEL = 1;
-    IOCIE = 1;
-    INT0IP = 1;
-    INT1IP = 0;
-    INT2IP =0;
+    Send_Command (0b00101000);
+    Send_Command (0b00001110);
+    Send_Command (0b00000110);
 
-    INT0IE = 1;
-    INT1IE = 1;
-    INT2IE =1;
+    Send_Data ('H');
+    Send_Data ('e');
+    Send_Data ('l');
+    Send_Data ('l');
+    Send_Data ('o');
+
+    Send_Command (0b01000000);
+    Send_Data (0b00000000);
+    Send_Data (0b00001010);
+    Send_Data (0b00001010);
+    Send_Data (0b00000000);
+    Send_Data (0b00010001);
+    Send_Data (0b00001110);
+    Send_Data (0b00000000);
+    Send_Data (0b00000000);
+
+    Send_Command (0b11000000);
+    Send_Data(0);
     while(1)
     {
 

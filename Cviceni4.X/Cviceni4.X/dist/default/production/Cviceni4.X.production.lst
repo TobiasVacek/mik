@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V3.10 build 20250813170317 
-                                                                                               Wed Oct 15 13:54:41 2025
+                                                                                               Wed Oct 15 14:02:21 2025
 
 Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1 
      1                           	processor	18F47K40
@@ -727,7 +727,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
    708   000F38                     __end_of_main:
    709                           	callstack 0
    710                           
-   711 ;; *************** function _TIMER0 *****************
+   711 ;; *************** function _INTERRUPTS *****************
    712 ;; Defined at:
    713 ;;		line 44 in file "main.c"
    714 ;; Parameters:    Size  Location     Type
@@ -764,7 +764,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
    740                           	psect	intcode
    741   000008                     __pintcode:
    742                           	callstack 0
-   743   000008                     _TIMER0:
+   743   000008                     _INTERRUPTS:
    744                           	callstack 30
    745                           
    746                           ;incstack = 0
@@ -846,7 +846,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
    822                           ; BSR set to: 14
    823   000058  9201               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
    824   00005A  0011               	retfie		f
-   825   00005C                     __end_of_TIMER0:
+   825   00005C                     __end_of_INTERRUPTS:
    826                           	callstack 0
    827                           
    828                           	psect	smallconst
@@ -1041,7 +1041,7 @@ Critical Paths under _main in COMRAM
 
     None.
 
-Critical Paths under _TIMER0 in COMRAM
+Critical Paths under _INTERRUPTS in COMRAM
 
     None.
 
@@ -1049,7 +1049,7 @@ Critical Paths under _main in BANK0
 
     None.
 
-Critical Paths under _TIMER0 in BANK0
+Critical Paths under _INTERRUPTS in BANK0
 
     None.
 
@@ -1057,7 +1057,7 @@ Critical Paths under _main in BANK1
 
     None.
 
-Critical Paths under _TIMER0 in BANK1
+Critical Paths under _INTERRUPTS in BANK1
 
     None.
 
@@ -1065,7 +1065,7 @@ Critical Paths under _main in BANK2
 
     None.
 
-Critical Paths under _TIMER0 in BANK2
+Critical Paths under _INTERRUPTS in BANK2
 
     None.
 
@@ -1073,7 +1073,7 @@ Critical Paths under _main in BANK3
 
     None.
 
-Critical Paths under _TIMER0 in BANK3
+Critical Paths under _INTERRUPTS in BANK3
 
     None.
 
@@ -1081,7 +1081,7 @@ Critical Paths under _main in BANK4
 
     None.
 
-Critical Paths under _TIMER0 in BANK4
+Critical Paths under _INTERRUPTS in BANK4
 
     None.
 
@@ -1089,7 +1089,7 @@ Critical Paths under _main in BANK5
 
     None.
 
-Critical Paths under _TIMER0 in BANK5
+Critical Paths under _INTERRUPTS in BANK5
 
     None.
 
@@ -1097,7 +1097,7 @@ Critical Paths under _main in BANK6
 
     None.
 
-Critical Paths under _TIMER0 in BANK6
+Critical Paths under _INTERRUPTS in BANK6
 
     None.
 
@@ -1105,7 +1105,7 @@ Critical Paths under _main in BANK7
 
     None.
 
-Critical Paths under _TIMER0 in BANK7
+Critical Paths under _INTERRUPTS in BANK7
 
     None.
 
@@ -1113,7 +1113,7 @@ Critical Paths under _main in BANK8
 
     None.
 
-Critical Paths under _TIMER0 in BANK8
+Critical Paths under _INTERRUPTS in BANK8
 
     None.
 
@@ -1121,7 +1121,7 @@ Critical Paths under _main in BANK9
 
     None.
 
-Critical Paths under _TIMER0 in BANK9
+Critical Paths under _INTERRUPTS in BANK9
 
     None.
 
@@ -1129,7 +1129,7 @@ Critical Paths under _main in BANK10
 
     None.
 
-Critical Paths under _TIMER0 in BANK10
+Critical Paths under _INTERRUPTS in BANK10
 
     None.
 
@@ -1137,7 +1137,7 @@ Critical Paths under _main in BANK11
 
     None.
 
-Critical Paths under _TIMER0 in BANK11
+Critical Paths under _INTERRUPTS in BANK11
 
     None.
 
@@ -1145,7 +1145,7 @@ Critical Paths under _main in BANK12
 
     None.
 
-Critical Paths under _TIMER0 in BANK12
+Critical Paths under _INTERRUPTS in BANK12
 
     None.
 
@@ -1153,7 +1153,7 @@ Critical Paths under _main in BANK13
 
     None.
 
-Critical Paths under _TIMER0 in BANK13
+Critical Paths under _INTERRUPTS in BANK13
 
     None.
 
@@ -1161,7 +1161,7 @@ Critical Paths under _main in BANK14
 
     None.
 
-Critical Paths under _TIMER0 in BANK14
+Critical Paths under _INTERRUPTS in BANK14
 
     None.
 
@@ -1176,7 +1176,7 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (1) _TIMER0                                               0     0      0       0
+ (1) _INTERRUPTS                                           0     0      0       0
  ---------------------------------------------------------------------------------
  Estimated maximum stack depth 1
  ---------------------------------------------------------------------------------
@@ -1185,7 +1185,7 @@ Call Graph Tables:
 
  _main (ROOT)
 
- _TIMER0 (ROOT)
+ _INTERRUPTS (ROOT)
 
 Address spaces:
 Name               Size   Autos  Total    Usage
@@ -1231,36 +1231,36 @@ DATA                 0      0       0      0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V3.10 build 20250813170317 
-Symbol Table                                                                                   Wed Oct 15 13:54:41 2025
+Symbol Table                                                                                   Wed Oct 15 14:02:21 2025
 
                      l56 0F30                       l57 0F30                      l871 0F18  
                     l881 0F24                      l873 0F1C                      l891 0F2E  
                     l883 0F26                      l875 0F1E                      l867 0F02  
                     l885 0F28                      l877 0F20                      l869 0F0C  
                     l887 0F2A                      l879 0F22                      l889 0F2C  
-                    _GIE 7F97                     _GIEL 7F96                     _LATD 0F86  
-                   i2l51 0058                     i2l48 0030                     _main 0F02  
-                   btemp 0001                     start 005C             ___param_bank 0000  
-                  ?_main 0000                    _IOCIE 7614                    i2l851 001E  
-                  i2l861 0052                    i2l853 002C                    i2l845 000A  
-                  i2l863 0056                    i2l855 003E                    i2l847 001A  
-                  i2l857 0042                    i2l849 001C                    i2l859 0044  
-                  _TRISB 0F89                    _TRISD 0F8B                    btemp0 0001  
-                  btemp1 0002          __initialization 0F38             __end_of_main 0F38  
-                 ??_main 0000            __activetblptr 0000                   _ANSELB 0F19  
-                 _ANSELD 0F26                   _T0CON0 0FD5                   _T0CON1 0FD6  
-                 _INT0IE 7610                   _INT0IF 7650                   _INT1IE 7611  
-                 _INT1IF 7651                   _INT2IE 7612                   _INT2IF 7652  
-                 _INT0IP 75D0                   _INT1IP 75D1                   _INT2IP 75D2  
-                 _TIMER0 0008                   _TMR0IE 7615                   _TMR0IF 7655  
+                    _GIE 7F97              ?_INTERRUPTS 0000                     _GIEL 7F96  
+                   _LATD 0F86                     i2l51 0058                     i2l48 0030  
+                   _main 0F02                     btemp 0001                     start 005C  
+           ___param_bank 0000                    ?_main 0000                    _IOCIE 7614  
+                  i2l851 001E                    i2l861 0052                    i2l853 002C  
+                  i2l845 000A                    i2l863 0056                    i2l855 003E  
+                  i2l847 001A                    i2l857 0042                    i2l849 001C  
+                  i2l859 0044                    _TRISB 0F89                    _TRISD 0F8B  
+                  btemp0 0001                    btemp1 0002          __initialization 0F38  
+           __end_of_main 0F38                   ??_main 0000            __activetblptr 0000  
+                 _ANSELB 0F19                   _ANSELD 0F26                   _T0CON0 0FD5  
+                 _T0CON1 0FD6                   _INT0IE 7610                   _INT0IF 7650  
+                 _INT1IE 7611                   _INT1IF 7651                   _INT2IE 7612  
+                 _INT2IF 7652                   _INT0IP 75D0                   _INT1IP 75D1  
+                 _INT2IP 75D2                   _TMR0IE 7615                   _TMR0IF 7655  
                  i2u1_40 001A                   i2u1_41 0016                   i2u2_40 002C  
                  i2u2_41 0028                   i2u3_40 003E                   i2u3_41 003A  
                  i2u4_40 0052                   i2u4_41 004E                   isa$std 0001  
            __mediumconst 0F00               __accesstop 0060  __end_of__initialization 0F38  
-          ___rparam_used 0001           __pcstackCOMRAM 0000                  ?_TIMER0 0000  
-                __Hparam 0000                  __Lparam 0000             __psmallconst 0F00  
-                __pcinit 0F38                  __ramtop 0F00                  __ptext0 0F02  
-   end_of_initialization 0F38           __end_of_TIMER0 005C      start_initialization 0F38  
-               ??_TIMER0 0000                __pintcode 0008              __smallconst 0F00  
-               __Hrparam 0000                 __Lrparam 0000                 isa$xinst 0000  
-               int$flags 0001                 intlevel2 0000  
+          ___rparam_used 0001           __pcstackCOMRAM 0000             ??_INTERRUPTS 0000  
+     __end_of_INTERRUPTS 005C                  __Hparam 0000                  __Lparam 0000  
+           __psmallconst 0F00                  __pcinit 0F38                  __ramtop 0F00  
+                __ptext0 0F02     end_of_initialization 0F38      start_initialization 0F38  
+              __pintcode 0008              __smallconst 0F00                 __Hrparam 0000  
+               __Lrparam 0000                 isa$xinst 0000                 int$flags 0001  
+             _INTERRUPTS 0008                 intlevel2 0000  

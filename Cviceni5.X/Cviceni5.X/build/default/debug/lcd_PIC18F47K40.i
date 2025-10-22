@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "lcd_PIC18F47K40.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,44 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-
-
-#pragma config FEXTOSC = HS
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config CSWEN = ON
-#pragma config FCMEN = OFF
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTE = OFF
-#pragma config LPBOREN = OFF
-#pragma config BOREN = SBORDIS
-
-
-#pragma config BORV = VBOR_2P45
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config DEBUG = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config LVP = OFF
-
-
-
+# 1 "lcd_PIC18F47K40.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -17049,63 +17012,43 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 39 "main.c" 2
+# 2 "lcd_PIC18F47K40.c" 2
+# 1 "./lcd_PIC18F47K40.h" 1
 
 
 
 
 
-void __attribute__((picinterrupt(("")))) INTERRUPTS(void)
+
+void Send_Command (char cmd);
+void Send_Data (char dat);
+# 3 "lcd_PIC18F47K40.c" 2
+
+void Send()
 {
-    if (TMR0IF)
-    {
-        LATD=~LATD;
-        TMR0IF=0;
-    }
-    if(INT0IF){
-        LATD = 0;
-        INT0IF = 0;
-    }
-    if(INT1IF){
-        LATD = 0xF0;
-        INT1IF = 0;
-    }
-    if(INT2IF){
-        LATD = 0b10101010;
-        INT2IF = 0;
-    }
-    return;
+  LATBbits.LATB5 = 1;
+  _delay((unsigned long)((1)*(8000000/4000000.0)));
+  LATBbits.LATB5 = 0;
 }
 
-void main(void)
+void Send_Command (char cmd)
 {
-    ANSELD = 0;
-    ANSELB = 0;
+  LATB = cmd;
+  LATBbits.LATB4 = 0;
+  Send();
+  LATB = cmd;
+  LATBbits.LATB4 = 0;
+  Send();
+  _delay((unsigned long)((2)*(8000000/4000.0)));
+}
 
-    TRISB = 0xFF;
-    TRISD = 0x00;
-    LATD = 0xF0;
-
-
-    T0CON1 = 0b01000001;
-    T0CON0 = 0b10011111;
-
-    TMR0IF = 0;
-    TMR0IE = 1;
-    GIE = 1;
-    GIEL = 1;
-    IOCIE = 1;
-    INT0IP = 1;
-    INT1IP = 0;
-    INT2IP =0;
-
-    INT0IE = 1;
-    INT1IE = 1;
-    INT2IE =1;
-    while(1)
-    {
-
-    }
-
-    return;
+void Send_Data (char dat)
+{
+  LATB = dat;
+  LATBbits.LATB4 = 1;
+  Send();
+  LATB = dat;
+  LATBbits.LATB4 = 1;
+  Send();
+  _delay((unsigned long)((50)*(8000000/4000000.0)));
 }
